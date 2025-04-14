@@ -1,0 +1,8 @@
+.card {
+    width: 25%;
+    height: 150px;
+    color: #FFF;
+    padding: 10px 25px;
+    background: #000;
+    border-radius: 10px;
+}

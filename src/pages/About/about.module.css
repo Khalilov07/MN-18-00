@@ -1,0 +1,15 @@
+.home { /* создание ключа */
+    width: 200px;
+    height: 100vh;
+    background: blue;
+}
+
+.aboutMain {
+    background: red;
+}
+
+.text {
+    width: 100%;
+    height: 200px;
+    background: red;
+}
