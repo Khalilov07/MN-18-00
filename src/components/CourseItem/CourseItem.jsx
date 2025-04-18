@@ -1,14 +1,15 @@
 import React from 'react';
 import styles from './course.module.css'
  
-const CourseItem = (props) => {
+const CourseItem = ( { title, duration, more } ) => {
+   
+    
+
     return (
         <div className={styles.card}>
-            <h4>Title: {props.title}</h4>
-            <h4>Duration:  {props.duration}</h4>
-            <h4>More: {props.more}</h4>
-            <h5></h5>
-            <h6></h6>
+            <h4>Title: {title}</h4>
+            <h4>Duration:  {duration}</h4>
+            <h4>More: {more}</h4>
         </div>
     );
 };

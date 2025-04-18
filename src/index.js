@@ -12,7 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render - отобразить
 
 root.render(
-  <BrowserRouter>
+  // BrowserRouter - Это специальный компонент который позволяет работать нам с react-router-dom
+  <BrowserRouter> 
     <App /> 
+    {/* // главный компонент который содержит все страницы, header, footer */}
   </BrowserRouter>
 );

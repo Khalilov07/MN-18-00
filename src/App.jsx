@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 
 const App = () => {
 
@@ -24,9 +25,12 @@ const App = () => {
     <div className="App">
       <Header />
 
+      {/* Routes - это родитель наших маршрутов */}
       <Routes>
-        <Route element={ <Home />} path="/" />
-        <Route element={ <About /> } path="/about" />
+        {/* Route - это маршрут который переносит нас по страницам */}
+        <Route element={<Home />} path="/" />
+        <Route element={<About />} path="/about" />
+        <Route element={ <Contact />}  path='/contact' />
       </Routes>
 
       <Footer />
