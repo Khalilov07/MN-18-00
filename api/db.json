@@ -1,0 +1,28 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "title": "HTML",
+      "duration": 2,
+      "more": " HTML - it's scelet web-site"
+    },
+    {
+      "id": 2,
+      "title": "CSS",
+      "duration": 2,
+      "more": "CSS"
+    },
+    {
+      "id": 3,
+      "title": "JS",
+      "duration": 2,
+      "more": " JS"
+    },
+    {
+      "id": 4,
+      "title": "REACT",
+      "duration": 2,
+      "more": " React"
+    }
+  ]
+}
