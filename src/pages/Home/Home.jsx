@@ -5,32 +5,23 @@ import CourseItem from '../../components/CourseItem/CourseItem';
 
 const Home = () => {
 
-    const materials = [
-        {
-            id: 1,
-            title: "HTML",
-            duration: 2,
-            more: " HTML - it's scelet web-site"
-        },
-        {
-            id: 2,
-            title: "CSS",
-            duration: 2,
-            more: "CSS"
-        },
-        {
-            id: 3,
-            title: "JS",
-            duration: 2,
-            more: " JS"
-        },
-        {
-            id: 4,
-            title: "REACT",
-            duration: 2,
-            more: " React"
-        },
-    ]
+    const [courses, setCourses] = useState([])
+
+    const API = "http://localhost:8080/course"
+
+    useEffect(() => {
+
+        fetch(API)
+            .then(res => res.json()) // json => object - js не умеет работать с json форматом
+            .then(data => setCourses(data))
+
+
+    }, [])
+
+    console.log(courses);
+    
+
+
 
     return (
         <div className='home'>
@@ -43,12 +34,12 @@ const Home = () => {
 
                 {/* Вывести в  консоль все данные их массива при помощи метода перебора массивов */}
 
-                {materials.map(item => {
+                {courses.map(item => {
                     return <CourseItem title={item.title} duration={item.duration} more={item.more} key={item.id} />
                 })}
 
                 {/* <CourseItem title={materials[0].title} duration={materials[0].duration} more={materials[0].more} />  */}
-                      
+
             </div>
 
         </div>

@@ -28,6 +28,11 @@ const Header = () => {
                             Contact
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/create" className="header__link">
+                            Create Course
+                        </Link>
+                    </li>
                 </ul>
 
             </nav>

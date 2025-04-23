@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import CreateCourse from './pages/CreateCourse/CreateCourse'
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
         <Route element={<Home />} path="/" />
         <Route element={<About />} path="/about" />
         <Route element={ <Contact />}  path='/contact' />
+        <Route element={ <CreateCourse />}  path='/create' />
       </Routes>
 
       <Footer />
