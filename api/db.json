@@ -1,28 +1,46 @@
 {
   "course": [
     {
-      "id": 1,
+      "id": "1",
       "title": "HTML",
       "duration": 2,
       "more": " HTML - it's scelet web-site"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "CSS",
       "duration": 2,
       "more": "CSS"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "JS",
       "duration": 2,
       "more": " JS"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "REACT",
       "duration": 2,
       "more": " React"
+    },
+    {
+      "id": "aee1",
+      "title": "asd",
+      "duration": "",
+      "more": ""
+    },
+    {
+      "id": "83ff",
+      "title": "",
+      "duration": "",
+      "more": ""
+    },
+    {
+      "id": "3a4a",
+      "title": "",
+      "duration": "",
+      "more": ""
     }
   ]
 }
