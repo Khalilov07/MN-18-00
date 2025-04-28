@@ -1,5 +1,7 @@
+import React from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
+import Snackbar, { SnackbarCloseReason } from '@mui/material/Snackbar';
 
 import axios from 'axios';
 
@@ -15,19 +17,76 @@ const CreateCourse = () => {
     const [title, setTitle] = useState("")
     const [duration, setDuration] = useState("")
     const [more, setMore] = useState("")
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+        setOpen(true);
+      };
+
+      
+  const handleClose = () => {
+   
+    setOpen(false);
+  };
+    
 
 
-    const handleCreate = () => {
+    const handleCreate = (e) => {
+        e.preventDefault()
 
         const newData = {
-            title: title,
-            duration: duration,
-            more: more
+            title,
+            duration,
+            more
         }
 
         axios.post("http://localhost:8080/course", newData)
+            .then(res => {
+                setTitle("")
+                setDuration("")
+                setMore("")
+                handleClick()
+            }).catch(err => console.log(err)) 
 
     }
+
+    const action = (
+      <React.Fragment>
+        <Button color="secondary" size="small" onClick={handleClose}>
+          UNDO
+        </Button>
+       x
+      </React.Fragment>
+    );
+  
+
+
+    return (
+        <>
+              <div className={styles.formWrapper}>
+            <form className={styles.form} style={{ margin: "50px 0 0 0" }} >
+                <h1>Create Course</h1>
+                <TextField onChange={(e) => setTitle(e.target.value)} value={title} style={{ width: '100%' }} id="standard-basic" label="Title" variant="standard" />
+                <TextField onChange={(e) => setDuration(e.target.value)} value={duration} style={{ width: '100%' }} id="standard-basic" label="Duration" variant="standard" />
+                <TextField onChange={(e) => setMore(e.target.value)} value={more} style={{ width: '100%' }} id="standard-basic" label="More" variant="standard" />
+                <Button style={{ width: '100%' }} variant="contained" color="success" onClick={handleCreate}>
+                    Create
+                </Button>
+            </form>
+        </div>
+        
+    <Snackbar
+        open={open}
+        autoHideDuration={10000}
+        onClose={handleClose}
+        message="Курс создан успешно"
+        action={action}
+      />
+        </>
+    );
+};
+
+export default CreateCourse;
 
 
 
@@ -37,21 +96,3 @@ const CreateCourse = () => {
     // DELETE - удалить 
     // PUT - отредактировать полноценно
     // PATCH - отредактировать частично
-
-
-    return (
-        <div className={styles.formWrapper}>
-            <form className={styles.form} style={{ margin: "50px 0 0 0" }} action="" onSubmit={() => handleCreate()}>
-                <h1>Create Course</h1>
-                <TextField onChange={(e) => setTitle(e.target.value)} value={title} style={{ width: '100%' }} id="standard-basic" label="Title" variant="standard" />
-                <TextField onChange={(e) => setDuration(e.target.value)} value={duration} style={{ width: '100%' }} id="standard-basic" label="Duration" variant="standard" />
-                <TextField onChange={(e) => setMore(e.target.value)} value={more} style={{ width: '100%' }} id="standard-basic" label="More" variant="standard" />
-                <Button style={{ width: '100%' }} variant="contained" color="success" >
-                    Create
-                </Button>
-            </form>
-        </div>
-    );
-};
-
-export default CreateCourse;
