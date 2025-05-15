@@ -1,16 +1,18 @@
 {
   "course": [
     {
-      "id": "7e6d",
-      "title": "",
-      "duration": "",
-      "more": ""
+      "id": "a336",
+      "title": "HTML",
+      "duration": "2",
+      "more": "HTML",
+      "img": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.png"
     },
     {
-      "id": "d3f2",
-      "title": "",
-      "duration": "",
-      "more": ""
+      "id": "3a84",
+      "title": "CSS",
+      "duration": "2",
+      "more": "CSS",
+      "img": "https://1000logos.net/wp-content/uploads/2020/09/CSS-Logo-2011.png"
     }
   ]
 }

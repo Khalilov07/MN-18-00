@@ -26,6 +26,9 @@ const Review = () => {
     const newArray = array.filter(item => item.id != 3)
 
     console.log(newArray);
+
+
+    // map(), filter(), reduce(), find()
     
 
     // const numbers = [1, 2, 3, 4, 5, 6, 7, 9]
@@ -53,3 +56,5 @@ const Review = () => {
 };
 
 export default Review;
+
+// 

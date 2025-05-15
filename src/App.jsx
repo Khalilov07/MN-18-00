@@ -9,6 +9,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Review from './pages/Review/Review'
 import CreateCourse from './pages/CreateCourse/CreateCourse'
+import Single from './pages/Single/Single'
 
 const App = () => {
 
@@ -35,6 +36,8 @@ const App = () => {
         <Route element={ <Contact />}  path='/contact' />
         <Route element={ <CreateCourse />}  path='/create' />
         <Route element={ <Review />}  path='/review' />
+        <Route element={ <Single />}  path='/course/:id' />
+        {/* :название параметра - Это дает нам отслеживание данного параметра */}
       </Routes>
 
       <Footer />

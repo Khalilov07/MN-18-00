@@ -18,6 +18,7 @@ const CreateCourse = () => {
     const [duration, setDuration] = useState("")
     const [more, setMore] = useState("")
     const [open, setOpen] = useState(false);
+    const [img, setImg] = useState("");
 
     const handleClick = () => {
         setOpen(true);
@@ -37,7 +38,8 @@ const CreateCourse = () => {
         const newData = {
             title,
             duration,
-            more
+            more,
+            img
         }
 
         axios.post("http://localhost:8080/course", newData)
@@ -69,6 +71,7 @@ const CreateCourse = () => {
                 <TextField onChange={(e) => setTitle(e.target.value)} value={title} style={{ width: '100%' }} id="standard-basic" label="Title" variant="standard" />
                 <TextField onChange={(e) => setDuration(e.target.value)} value={duration} style={{ width: '100%' }} id="standard-basic" label="Duration" variant="standard" />
                 <TextField onChange={(e) => setMore(e.target.value)} value={more} style={{ width: '100%' }} id="standard-basic" label="More" variant="standard" />
+                <TextField onChange={(e) => setImg(e.target.value)} value={img} style={{ width: '100%' }} id="standard-basic" label="Img" variant="standard" />
                 <Button style={{ width: '100%' }} variant="contained" color="success" onClick={handleCreate}>
                     Create
                 </Button>
