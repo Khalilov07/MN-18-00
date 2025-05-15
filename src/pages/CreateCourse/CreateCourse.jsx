@@ -32,7 +32,7 @@ const CreateCourse = () => {
 
 
     const handleCreate = (e) => {
-        e.preventDefault()
+        e.preventDefault() // event.preventDefault() - stop reload website 
 
         const newData = {
             title,

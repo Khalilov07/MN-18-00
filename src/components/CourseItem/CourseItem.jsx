@@ -3,7 +3,7 @@ import styles from './course.module.css'
 
 import { Button } from '@mui/material';
 
-const CourseItem = ({ title, duration, more }) => {
+const CourseItem = ({ title, duration, more, deleteCourse, id }) => {
 
 
 
@@ -12,7 +12,7 @@ const CourseItem = ({ title, duration, more }) => {
             <h4>Title: {title}</h4>
             <h4>Duration:  {duration}</h4>
             <h4>More: {more}</h4>
-            <Button style={{ width: '50%' }} variant="contained" color="error">
+            <Button style={{ width: '50%' }} onClick={() => deleteCourse(id)} variant="contained" color="error">
                 DELETE
             </Button>
         </div>

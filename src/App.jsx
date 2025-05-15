@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Review from './pages/Review/Review'
 import CreateCourse from './pages/CreateCourse/CreateCourse'
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
         <Route element={<About />} path="/about" />
         <Route element={ <Contact />}  path='/contact' />
         <Route element={ <CreateCourse />}  path='/create' />
+        <Route element={ <Review />}  path='/review' />
       </Routes>
 
       <Footer />
