@@ -47,6 +47,7 @@ const CreateCourse = () => {
                 setTitle("")
                 setDuration("")
                 setMore("")
+                setImg("")
                 handleClick()
             }).catch(err => console.log(err)) 
 
