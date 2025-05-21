@@ -8,11 +8,10 @@ import styles from './single.module.css'
 
 const Single = () => {
 
-    const [course, setCourse] = useState({})
-
+   
     const [title, setTitle] = useState("")
     const [duration, setDuration] = useState("")
-    const [More, setMore] = useState("")
+    const [more, setMore] = useState("")
     const [img, setImg] = useState("")
 
     const [editMode, setEditMode] = useState(false)
@@ -22,11 +21,16 @@ const Single = () => {
     const param = useParams()
 
     console.log(param.id);
-
     useEffect(() => {
         axios.get(`http://localhost:8080/course/${param.id}`)
-            .then(res => setCourse(res.data))
+            .then(res => {
+                setTitle(res.data.title)
+                setDuration(res.data.duration)
+                setMore(res.data.more)
+                setImg(res.data.img)
+            })
     }, [])
+
 
     const deleteCourse = () => {
         axios.delete(`http://localhost:8080/course/${param.id}`)
@@ -35,7 +39,8 @@ const Single = () => {
             })
     }
 
-    console.log(course);
+    console.log(title);
+    
 
 
 
@@ -45,10 +50,10 @@ const Single = () => {
                 <div style={{ width: "90%", margin: "0 auto", display: 'flex', flexDirection: "column", alignItems:"center", marginTop: '20px' 
                  }}>
                     <div style={{ width: "50%", margin: "0 auto",  display: 'flex', flexDirection: "column", alignItems:"center", gap: '40px' }}>
-                        <TextField onChange={(e) => setTitle(course.title)} value={course.title} style={{ width: '100%' }} id="standard-basic" label="Title" variant="standard" />
-                        <TextField onChange={(e) => setImg(e.target.value)} value={course.duration} style={{ width: '100%' }} id="standard-basic" label="Duration" variant="standard" />
-                        <TextField onChange={(e) => setImg(e.target.value)} value={course.more} style={{ width: '100%' }} id="standard-basic" label="More" variant="standard" />
-                        <TextField onChange={(e) => setImg(e.target.value)} value={course.img} style={{ width: '100%' }} id="standard-basic" label="Img" variant="standard" />
+                        <TextField onChange={(e) => setTitle(e.target.value)} value={title} style={{ width: '100%' }} id="standard-basic" label="Title" variant="standard" />
+                        <TextField onChange={(e) => setDuration(e.target.value)} value={duration} style={{ width: '100%' }} id="standard-basic" label="Duration" variant="standard" />
+                        <TextField onChange={(e) => setMore(e.target.value)} value={more} style={{ width: '100%' }} id="standard-basic" label="More" variant="standard" />
+                        <TextField onChange={(e) => setImg(e.target.value)} value={img} style={{ width: '100%' }} id="standard-basic" label="Img" variant="standard" />
                     </div>
                     <hr />
                     <Button onClick={() => setEditMode(false)} style={{ width: '40%' }} variant="contained" color="success">
@@ -57,13 +62,13 @@ const Single = () => {
                 </div>
                 :
                 <div className={styles.wrapper}>
-                    <img className={styles.img} src={`${course.img}`} alt="" />
+                    <img className={styles.img} src={`${img}`} alt="" />
                     <hr />
                     <div className={styles.info}>
                         <div className={styles.infoCourse}>
-                            <h2 className={styles.title}>{course.title}</h2>
-                            <h3 className={styles.duration}>{course.duration}</h3>
-                            <p className={styles.more}>{course.more}</p>
+                            <h3 className="text-[40px]">{title}</h3>
+                            <h3 className="text-[35px]">{duration}</h3>
+                            <p className="text-[20px]">{more}</p>
                         </div>
                         <div className={styles.btns}>
                             <Button onClick={deleteCourse} style={{ width: '100%' }} variant="contained" color="error">
